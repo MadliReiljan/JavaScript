@@ -27,6 +27,33 @@ const questions = [
     ]
   },
   {
+    question: "What is the largest planet in our solar system?",
+    answers: [
+      { text: "Mars", correct: false},
+      { text: "Saturn", correct: false},
+      { text: "Jupiter", correct: true},
+      { text: "Venus", correct: false},
+    ]
+  },
+  {
+    question: "Who wrote the play 'Romeo and Juliet'?",
+    answers: [
+      { text: "William Wordsworth", correct: false},
+      { text: "Jane Austen", correct: false},
+      { text: "Charles dickens", correct: false},
+      { text: "William Shakespeare", correct: true},
+    ]
+  },
+  {
+    question: "Who is known as the 'King of Pop'?",
+    answers: [
+      { text: "Elvis Presley", correct: false},
+      { text: "Michael Jackson", correct: true},
+      { text: "Madonna", correct: false},
+      { text: "Beyoncé", correct: false},
+    ]
+  },
+  {
     question: "Which is the smallest country in the world?",
     answers: [
       { text: "Vatican City", correct: true},
@@ -119,3 +146,13 @@ nextButton.addEventListener("click", ()=>{
 })
 
 startQuiz();
+
+const bgAnimation = document.getElementById('bgAnimation');
+
+const numberOfColorBoxes = 400;
+
+for (let i = 0; i < numberOfColorBoxes; i++) {
+    const colorBox = document.createElement('div');
+    colorBox.classList.add('colorBox');
+    bgAnimation.append(colorBox)
+}

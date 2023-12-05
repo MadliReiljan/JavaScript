@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 body {
   background: rgb(1, 110, 95);
@@ -12,17 +13,20 @@ body {
   background: #fff;
   width: 90%;
   max-width: 600px;
-  margin: 100px auto 0;
+  margin: 200px auto 0;
   border-radius: 10px;
   padding: 30px;
+  position: relative;
+  z-index: 2;
 }
 
 .app h1 {
-  font-size: 25px;
+  font-size: 29px;
   color: #001e4d;
   font-weight: 600;
-  border-bottom: 1px solid #333;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .quiz {
@@ -30,9 +34,10 @@ body {
 }
 
 .quiz h2{
-  font-size: 18px;
+  font-size: 24px;
   color: #001e4d;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .btn {
@@ -44,6 +49,7 @@ body {
   padding: 10px;
   margin: 10px 0;
   text-align: left;
+  font-size: 18px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s;
@@ -59,6 +65,7 @@ body {
   background: rgb(1, 110, 95);
   color: #fff;
   font-weight: 500;
+  font-size: 18px;
   width: 150px;
   border: 0;
   padding: 10px;
@@ -73,4 +80,53 @@ body {
 }
 .incorrect{
   background: #ff9393;
+}
+
+.bgAnimation{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(20,1fr);
+  grid-template-rows: repeat(20,1fr);
+  background: #1d1d1d;
+  filter: saturate(2);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.colorBox{
+  z-index: 2;
+  filter: brightness(1.1);
+  transition: 2s ease;
+  position: relative;
+  margin: 2px;
+  background: #1d1d1d;
+}
+
+.colorBox:hover{
+  background: #7700ff;
+  transition-duration: 0s;
+}
+
+.backgroundAnim{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #b700ff;
+  filter: blur(60px);
+  animation: animBack 6s linear infinite;
+}
+
+@keyframes animBack {
+  0%{
+      top: -60px;
+  }
+  100%{
+      top: 120%;
+  }
 }
